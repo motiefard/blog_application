@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import Http404
 from django.views import generic
 from django.views.decorators.http import require_POST
-from .models import Post
+from .models import Post, Comment
 from .forms import EmailPostForm, CommentForm
 from django.core.mail import send_mail
 
@@ -25,7 +25,10 @@ def post_detail(request, year, month, day, post):
                             publish__year=year,
                             publish__month=month,
                             publish__day=day)
-    return render(request, 'blog/post/detail.html', {'post':post_data})
+    # comments = Comment.objects.filter(active=True)
+    comments = post_data.comments.filter(active=True)
+    form = CommentForm()
+    return render(request, 'blog/post/detail.html', {'post':post_data, 'comments':comments, 'form':form})
 
 
 def post_share(request, post_id):
