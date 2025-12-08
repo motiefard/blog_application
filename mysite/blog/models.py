@@ -3,6 +3,7 @@ from django.db import models
 from django.utils import timezone
 # from django.db.models.functions import Now
 from django.urls import reverse
+from taggit.managers import TaggableManager
 
 class publishedManager(models.Manager):
     def get_queryset(self):
@@ -31,6 +32,7 @@ class Post(models.Model):
     
     objects = models.Manager()
     published = publishedManager()
+    tags = TaggableManager()
 
 
     class Meta:
