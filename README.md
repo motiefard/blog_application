@@ -20,6 +20,14 @@ It demonstrates my experience in backend development, database handling, templat
 - Sending emails with Django
 - Using Django forms to share posts via email
 - Adding comments to posts using forms from models
+- Implementing tagging using django-taggit
+- Retrieving posts by similarity
+- Creating custom template tags and filters to display the latest posts and most commented posts
+- Adding a sitemap to the site
+- Creating feeds for blog posts
+- Installing PostgreSQL
+- Using fixtures to dump and load data into the database
+- Implementing a full-text search engine with Django and PostgreSQL
 
 
 ---
@@ -30,6 +38,7 @@ It demonstrates my experience in backend development, database handling, templat
 - **Django 5.x**
 - **HTML/CSS**
 - **SQLite**
+- **PostgreSQL**
 
 ---
 
